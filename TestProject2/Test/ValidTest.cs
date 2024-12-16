@@ -32,7 +32,7 @@ namespace TestProject2.Test
         }
 
         //Verify case tinh gia tien bac 1
-        [TestMethod("TC3: Verify tinh gia tien bac 1 su dung DataRow")]
+        [TestMethod("TC2: Verify tinh gia tien bac 1 su dung DataRow")]
         [DataRow(100,100, DisplayName = "Tinh tien bac 1: input 100 va 100")]
         [DataRow(100, 101, DisplayName = "Tinh tien bac 1: input 100 va 101")]
         [DataRow(100, 150, DisplayName = "Tinh tien bac 1: input 100 va 150")]
@@ -50,14 +50,32 @@ namespace TestProject2.Test
         }
 
         //Verify case tinh gia tien bac 2
-        [TestMethod("TC2: Verify tinh gia tien bac 2")]
-        [DataRow(100, 100, DisplayName = "Tinh tien bac 1: input 100 va 151")]
-        [DataRow(100, 101, DisplayName = "Tinh tien bac 1: input 100 va 199")]
-        [DataRow(100, 150, DisplayName = "Tinh tien bac 1: input 100 va 200")]
+        [TestMethod("TC3: Verify tinh gia tien bac 2")]
+        [DataRow(100, 151, DisplayName = "Tinh tien bac 1: input 100 va 151")]
+        [DataRow(100, 199, DisplayName = "Tinh tien bac 1: input 100 va 199")]
+        [DataRow(100, 200, DisplayName = "Tinh tien bac 1: input 100 va 200")]
         public void TinhTienBac2_DataRow(int chiSoDauKy, int chiSoCuoiKy)
         {
             //Expect value cho gia tien phai tra
             int expected = (chiSoCuoiKy - chiSoDauKy)* 1734;
+
+            //Run test
+            int actual = testApp.Calculator(chiSoDauKy, chiSoCuoiKy);
+
+            //Kiem tra
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        //Verify case tinh gia tien bac 3
+        [TestMethod("TC4: Verify tinh gia tien bac 3")]
+        [DataRow(100, 201, DisplayName = "Tinh tien bac 1: input 100 va 201")]
+        [DataRow(100, 299, DisplayName = "Tinh tien bac 1: input 100 va 299")]
+        [DataRow(100, 300, DisplayName = "Tinh tien bac 1: input 100 va 300")]
+        public void TinhTienBac3_DataRow(int chiSoDauKy, int chiSoCuoiKy)
+        {
+            //Expect value cho gia tien phai tra
+            int expected = (chiSoCuoiKy - chiSoDauKy) * 2014;
 
             //Run test
             int actual = testApp.Calculator(chiSoDauKy, chiSoCuoiKy);

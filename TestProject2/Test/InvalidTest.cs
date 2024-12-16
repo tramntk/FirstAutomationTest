@@ -18,20 +18,20 @@ namespace TestProject2.Test
             int chiSoCuoiKy = 1;
 
             //Cach 1: handle = try catch
-            /*
+            
             //Khoi tao application
             try
             {
-                int actual = appTest.Calculator(chiSoDauKy, chiSoCuoiKy);
+                int actual = testApp.Calculator(chiSoDauKy, chiSoCuoiKy);
             }
             catch (Exception ex)
             {
                 Assert.AreEqual("Chi so dau ky khong duoc lon hon chi so cuoi ki", ex.Message);
             }
-            */
+            
 
             //Cách 2: handle = Assert
-            Assert.ThrowsException<Exception>(() => testApp.Calculator(chiSoDauKy, chiSoCuoiKy));
+            //Assert.ThrowsException<Exception>(() => testApp.Calculator(chiSoDauKy, chiSoCuoiKy));
             
         }
     }
