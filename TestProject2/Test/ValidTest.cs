@@ -16,7 +16,7 @@ namespace TestProject2.Test
         [TestMethod("TC1: Verify tinh gia tien bac 1")]
         public void TinhTienBac1()
         {
-            //Khai bao chi so dau ky, chi so cuoi ky
+            //Khai bao chi so dau ky, chi so cuoi ky 
             int chiSoDauKy = 0;
             int chiSoCuoiKy = 1;
              
